@@ -1,0 +1,17 @@
+services:
+  container-management:
+    image: mostafaewida/hackmaze_container_management:latest
+    pull_policy: always
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+        - my-custom-network
+    env_file:
+      - .env
+
+
+networks:
+  my-custom-network:
+    driver: bridge
+
